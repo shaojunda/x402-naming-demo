@@ -1,0 +1,21 @@
+{
+  "name": "x402-naming-demo",
+  "scripts": {
+    "dev": "node src/dev.js"
+  },
+  "description": "Pay-per-call Chinese naming API over x402, a demo seller for App Market for Agent",
+  "dependencies": {
+    "@x402/core": "^2.27.0",
+    "@x402/evm": "^2.27.0",
+    "@x402/hono": "^2.27.0",
+    "hono": "^4.13.11"
+  },
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@hono/node-server": "^2.1.3"
+  }
+}
