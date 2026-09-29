@@ -61,8 +61,10 @@ export function validateInput(input) {
   if (Number.isNaN(date.getTime()) || date.toISOString().slice(0, 10) !== birth_date) {
     throw new InputError("birth_date 不是有效日期");
   }
-  if (date.getUTCFullYear() < 1900 || date.getTime() > Date.now() + 366 * 86400000) {
-    throw new InputError("birth_date 超出支持范围（1900 年至明年）");
+  // 支持未来日期（如给预产期的宝宝起名），上限只用于拦截明显错误的输入
+  const year = date.getUTCFullYear();
+  if (year < 1900 || year > 2100) {
+    throw new InputError("birth_date 超出支持范围（1900 至 2100 年）");
   }
   if (gender !== "male" && gender !== "female") throw new InputError("gender 只能是 male 或 female");
   if (surname !== undefined && (typeof surname !== "string" || !/^[一-龥]{1,2}$/.test(surname))) {

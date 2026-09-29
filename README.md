@@ -26,7 +26,7 @@ Agent 在 App Market 搜到本服务 → 付费调用 → 得到名字
 
 | 字段 | 必填 | 说明 |
 |---|---|---|
-| `birth_date` | ✅ | 出生日期，`YYYY-MM-DD` |
+| `birth_date` | ✅ | 出生日期（可以是未来日期，如预产期），`YYYY-MM-DD`，范围 1900 至 2100 年 |
 | `gender` | ✅ | `male` 或 `female` |
 | `surname` | | 姓氏，1 到 2 个汉字 |
 

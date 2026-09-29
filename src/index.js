@@ -29,7 +29,7 @@ app.get("/", (c) =>
     price: config.price,
     network: config.network,
     input: {
-      birth_date: "必填，YYYY-MM-DD",
+      birth_date: "必填，YYYY-MM-DD，1900 至 2100 年，可以是未来日期",
       gender: "必填，male 或 female",
       surname: "选填，1 到 2 个汉字",
     },
