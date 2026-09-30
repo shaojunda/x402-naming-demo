@@ -1,7 +1,8 @@
 {
   "name": "x402-naming-demo",
   "scripts": {
-    "dev": "node src/dev.js"
+    "dev": "node src/dev.js",
+    "test": "node --test"
   },
   "description": "Pay-per-call Chinese naming API over x402, a demo seller for App Market for Agent",
   "dependencies": {

@@ -39,6 +39,8 @@ app.get("/", (c) =>
 
 app.get("/health", (c) => c.json({ ok: true }));
 
+// 注意顺序：中间件只对在它之后注册的路由生效。收费路由必须写在这之后，
+// 否则会被免费访问且不会报错（test/payment.test.js 会检查这一点）。
 app.use(
   paymentMiddleware(
     {

@@ -80,4 +80,7 @@ node pay.mjs pay --url <服务地址>/v1/name \
 ```bash
 npm install
 npm run dev      # http://localhost:3000
+npm test         # 收费边界测试（需要联网访问 facilitator）
 ```
+
+`test/payment.test.js` 检查未付款或伪造付款时拿不到名字、免费路由正常访问。Hono 的中间件只对在它之后注册的路由生效，调整 `src/index.js` 中的路由顺序后请务必运行测试。
